@@ -33,9 +33,9 @@
                     tel=str.replace(/^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/,"$1 $2 $3 $4 $5");
                     obj.value=tel;
                     //tele.innerHTML=obj.value;
-                    break;aze
+                    break;
                 case (str.length>10) :
-                    obj.value=str.substr(0,14).replace(/^(\d{2})(\d{2})(\{2})(\d{2})(\d{2})$/,"$1 $2 $3 $4 $5");
+                    obj.value=str.substr(0,17).replace(/^(\d{2})(\d{2})(\{2})(\d{2})(\d{2})$/,"$1 $2 $3 $4 $5");
                     //tele.innerHTML=obj.value;
 
             }
@@ -132,7 +132,7 @@
         <p>
             <p><label for="Num_tel">Numéro de tel</label></p>
             <!--<input id="Num_tel" type="tel" name="telephone" placeholder="Entrer votre numéro de téléphone"  maxlength="14">-->
-            <input name='telephone' placeholder="Ex: +33 6 02 03 04 05" type='text' required="required" id="Num_tel" onKeyUp="format(this)" size="14" maxlength="14" /><br>
+            <input name='telephone' placeholder="Ex: +33 6 02 03 04 05" type='text' required="required" id="Num_tel" onKeyUp="format(this)" size="14" maxlength="17" /><br>
         </p>
     </fieldset>
     <br>
