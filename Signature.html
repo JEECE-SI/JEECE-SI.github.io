@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Création de signature automatique </title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script type="text/JavaScript">
+        function showMessage(){
+            var Nom = document.getElementById("Nom").value;
+            Name.innerHTML= Nom.toUpperCase();
+
+            var Prenom = document.getElementById("Prenom").value;
+            prenom.innerHTML= Prenom;
+
+            var Poste = document.getElementById("Poste").value;
+            poste.innerHTML= Poste;
+
+            var Num_tel =document.getElementById("Num_tel").value;
+            tele.innerHTML= Num_tel;
+
+            var Nom = document.getElementById("Nom").value;
+            Name2.innerHTML= Nom.toLowerCase();
+
+            var Prenom = document.getElementById("Prenom").value;
+            prenom2.innerHTML= Prenom.toLowerCase();
+        }
+        function format(obj){
+            //var str = document.getElementById("Num_tel").value;
+            var str=obj.value.replace(/-|\./g,'');
+            switch(true){
+                case (str.length==10):
+                    tel=str.replace(/^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/,"$1 $2 $3 $4 $5");
+                    obj.value=tel;
+                    //tele.innerHTML=obj.value;
+                    break;aze
+                case (str.length>10) :
+                    obj.value=str.substr(0,14).replace(/^(\d{2})(\d{2})(\{2})(\d{2})(\d{2})$/,"$1 $2 $3 $4 $5");
+                    //tele.innerHTML=obj.value;
+
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            font-family: 'Montserrat';
+        }
+
+        #header{
+            text-align: center;
+        }
+        #jeece{
+            color:#1cba5c;
+        }
+        #logo{
+            float:left;
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+        #identite{
+            float:left;
+            margin-bottom: 10px;
+        }
+
+        #legend{
+            font-weight: bold;
+        }
+
+        #Name{
+            font-weight: bold;
+            font-size:1.45em;
+            color: black;
+        }
+
+        #prenom{
+            font-weight: bold;
+            font-size: 1.45em;
+            color: black;
+        }
+
+        #poste{
+            font-weight:bold;
+            font-size: 1.25em;
+            color:#1cba5c;     
+     
+        }
+        #tele{
+            font-weight: bold;
+            font-size: 1.1em;
+            color: black;
+        }
+        #mail{
+            font-weight: bold;
+            font-size: 1.1em;
+            color:#1cba5c;
+        }
+        #foot{
+            font-weight: bold;
+            font-size: 1em;
+            color:#37423b;
+        }
+        #Output{
+            background-color: white;
+            width: 25em
+        }
+        #foot2{
+            font-size: 0.71em;
+            color:#1cba5c;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        #text{
+            border-left: 3px solid #1cba5c;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><h1>Générer votre signature <span id="jeece">JEECE</span></h1></div>
+    <form method="post" id="form_id" action="">
+        <fieldset form="form_id">
+            <legend id="legend">Vos Coordonnées</legend>
+        <p>
+            <p><label for="Nom">Nom</label></p>
+            <input id="Nom" type="text" name="username" placeholder="Entrer votre nom"><br>
+        </p>
+        <p>
+            <p><label for="Prenom">Prénom</label></p>
+            <input id="Prenom" type="text" name="surname" placeholder="Entrer votre Prénom"><br>
+        </p>
+        <p>
+            <p><label for="Num_tel">Numéro de tel</label></p>
+            <!--<input id="Num_tel" type="tel" name="telephone" placeholder="Entrer votre numéro de téléphone"  maxlength="14">-->
+            <input name='telephone' placeholder="Ex: +33 6 02 03 04 05" type='text' required="required" id="Num_tel" onKeyUp="format(this)" size="14" maxlength="14" /><br>
+        </p>
+    </fieldset>
+    <br>
+    <fieldset form="form_id">
+        <legend id="legend">Votre Poste</legend>
+        <p>
+            <p><label for="Poste">Votre Poste</label></p>
+            <input id="Poste" type="text" name="poste" placeholder="Entrer votre poste"><br>
+        </p>
+    </fieldset>
+​
+    <input type="button" onclick="showMessage()" value="générer" />
+    </form>
+    
+​
+    <p><br><br></p>
+    <div id="Output">
+    <table>
+        <tr>
+            <td>
+                <div id="logo">
+                    <img src="https://drive.google.com/uc?export=view&id=10zx8xEeoEDkZj-cUqzn2vdhoUQMQkcxp" 
+                    alt="JEECE" width="90">
+                </div>
+            </td>
+            <td id="text">
+                <div id="Identite">
+                    
+                    <p><span id = "prenom"></span> <span id = "Name"></span><br>
+                    <span id="poste"></span><br>
+                    <span id="tele"></span><br>
+                    <span id="mail"><span id = "prenom2"></span>.<span id = "Name2"></span>@jeece.fr</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+                    </p>
+        <div id="footer">
+            <span id="foot">JEECE, Junior-Entreprise de l'ECE</span><br>
+            <span id="foot2">contact@jeece.fr | 01 45 49 19 99 | <a href="https://www.jeece.fr/">www.jeece.fr</a></span>
+        </div>
+</body>
+</html>
